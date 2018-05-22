@@ -1,4 +1,4 @@
-{% set version = '1.7-8' %}
+{% set version = '1.7-11' %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/ade4_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/ade4/ade4_{{ version }}.tar.gz
-  sha256: 66dd4a3f571c0599a4e22406b1039f6968bc0abb619d72e50a97258a1c1fb7a8
+  sha256: 4ccd799ae99bd625840b866a697c4a48adb751660470bf0d6cf9207b1927a572
 
 build:
   number: 0
