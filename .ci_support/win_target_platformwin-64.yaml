@@ -1,5 +1,3 @@
-c_compiler:
-- vs2008
 cran_mirror:
 - https://cran.r-project.org
 pin_run_as_build:
