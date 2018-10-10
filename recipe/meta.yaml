@@ -1,4 +1,5 @@
-{% set version = '1.7-11' %}
+{% set version = '1.7-13' %}
+
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,27 +12,30 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ade4_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ade4/ade4_{{ version }}.tar.gz
-  sha256: 4ccd799ae99bd625840b866a697c4a48adb751660470bf0d6cf9207b1927a572
+  sha256: f5d0a7356ae63f82d3adb481a39007e7b0d70211b8724aa686af0c89c994e99b
 
 build:
   merge_build_host: True  # [win]
-  number: 1
-  skip: true  # [win32]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
+# Suggests: ade4TkGUI, adegraphics, adephylo, ape, CircStats, deldir, lattice, pixmap, sp, spdep, splancs, waveslim
 requirements:
   build:
     - {{ compiler('c') }}        # [not win]
     - {{native}}toolchain        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
-    - {{posix}}sed  # [win]
-    - {{posix}}coreutils  # [win]
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
+
   host:
     - r-base
     - r-mass
+
   run:
     - r-base
     - {{native}}gcc-libs         # [win]
@@ -43,7 +47,8 @@ test:
     - "\"%R%\" -e \"library('ade4')\""  # [win]
 
 about:
-  home: 'http://pbil.univ-lyon1.fr/ADE-4'
+  home: 'http://pbil.univ-lyon1.fr/ADE-4, Mailing list: http://listes.univ-lyon1.fr/wws/info/adelist'
+
   license: GPL (>= 2)
   summary: Tools for multivariate data analysis. Several methods are provided for the analysis
     (i.e., ordination) of one-table (e.g., principal component analysis, correspondence
@@ -51,8 +56,6 @@ about:
     (e.g., RLQ analysis) and K-table (e.g., STATIS, multiple coinertia analysis). The
     philosophy of the package is described in Dray and Dufour (2007) <doi:10.18637/jss.v022.i04>.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
 
 extra:
   recipe-maintainers:
@@ -63,3 +66,4 @@ extra:
     - jdblischak
     - cbrueffer
     - nick-youngblut
+
