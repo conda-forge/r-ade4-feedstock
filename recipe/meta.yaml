@@ -24,8 +24,7 @@ build:
 # Suggests: ade4TkGUI, adegraphics, adephylo, ape, CircStats, deldir, lattice, pixmap, sp, spdep, splancs, waveslim
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -66,4 +65,3 @@ extra:
     - jdblischak
     - cbrueffer
     - nick-youngblut
-
