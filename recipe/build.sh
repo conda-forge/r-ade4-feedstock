@@ -4,7 +4,7 @@ if [[ $target_platform =~ linux.* ]] || [[ $target_platform == win-32 ]] || [[ $
   export DISABLE_AUTOBREW=1
   mv DESCRIPTION DESCRIPTION.old
   grep -v '^Priority: ' DESCRIPTION.old > DESCRIPTION
-  $R CMD INSTALL --build .
+  $R CMD INSTALL --configure-vars="CC=$CC; CFLAGS= " --build .
 else
   mkdir -p $PREFIX/lib/R/library/ade4
   mv * $PREFIX/lib/R/library/ade4
