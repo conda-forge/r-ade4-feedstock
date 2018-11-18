@@ -1,7 +1,7 @@
 About r-ade4
 ============
 
-Home: http://pbil.univ-lyon1.fr/ADE-4
+Home: http://pbil.univ-lyon1.fr/ADE-4, Mailing list: http://listes.univ-lyon1.fr/wws/info/adelist
 
 Package license: GPL (>= 2)
 
