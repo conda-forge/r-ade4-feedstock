@@ -1,4 +1,4 @@
-{% set version = "1.7-17" %}
+{% set version = "1.7-18" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ade4_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ade4/ade4_{{ version }}.tar.gz
-  sha256: eed9df80b312d620faa27cbfe256dc49be9c67b50a86d95898cd3da67b123d69
+  sha256: ecb6f4c42c60f39702aa96f454bb536a333049c9608ee2b6bdf8795e059cc525
 
 build:
   merge_build_host: true  # [win]
