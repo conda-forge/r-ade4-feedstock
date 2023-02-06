@@ -21,8 +21,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('c') }}          # [not win]
+    - {{ compiler('m2w64_c') }}    # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
@@ -32,7 +32,8 @@ requirements:
     - r-base
     - r-mass
     - r-pixmap
-    - r-progress
+    - r-rcpp
+    - r-rcpparmadillo
     - r-sp
     - libblas
     - liblapack
@@ -41,7 +42,7 @@ requirements:
     - {{ native }}gcc-libs         # [win]
     - r-mass
     - r-pixmap
-    - r-progress
+    - r-rcpp
     - r-sp
 
 test:
@@ -51,33 +52,16 @@ test:
 
 about:
   home: http://pbil.univ-lyon1.fr/ADE-4
+  dev_url: https://github.com/sdray/ade4
   license: GPL-2.0-or-later
   summary: Tools for multivariate data analysis. Several methods are provided for the analysis (i.e., ordination) of one-table (e.g., principal component analysis, correspondence analysis), two-table (e.g., coinertia analysis, redundancy analysis), three-table (e.g., RLQ analysis) and K-table (e.g., STATIS, multiple coinertia
     analysis). The philosophy of the package is described in Dray and Dufour (2007) <doi:10.18637/jss.v022.i04>.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
     - conda-forge/r
     - nick-youngblut
-
-# Package: ade4
-# Version: 1.7-15
-# Date: 2020-02-13
-# Title: Analysis of Ecological Data: Exploratory and Euclidean Methods in Environmental Sciences
-# Author: Stephane Dray <stephane.dray@univ-lyon1.fr>, Anne-Beatrice Dufour <anne-beatrice.dufour@univ-lyon1.fr>, and Jean Thioulouse <jean.thioulouse@univ-lyon1.fr>, with contributions from Thibaut Jombart, Sandrine Pavoine, Jean R. Lobry, Sebastien Ollier, Daniel Borcard, Pierre Legendre, Stephanie Bougeard and Aurelie Siberchicot. Based on earlier work by Daniel Chessel.
-# Maintainer: Aurelie Siberchicot <aurelie.siberchicot@univ-lyon1.fr>
-# Depends: R (>= 2.10)
-# Imports: graphics, grDevices, methods, stats, utils, MASS, pixmap, sp
-# Suggests: ade4TkGUI, adegraphics, adephylo, ape, CircStats, deldir, lattice, spdep, splancs, waveslim
-# Description: Tools for multivariate data analysis. Several methods are provided for the analysis (i.e., ordination) of one-table (e.g., principal component analysis, correspondence analysis), two-table (e.g., coinertia analysis, redundancy analysis), three-table (e.g., RLQ analysis) and K-table (e.g., STATIS, multiple coinertia analysis). The philosophy of the package is described in Dray and Dufour (2007) <doi:10.18637/jss.v022.i04>.
-# License: GPL (>= 2)
-# URL: http://pbil.univ-lyon1.fr/ADE-4
-# BugReports: https://github.com/sdray/ade4/issues
-# Encoding: UTF-8
-# NeedsCompilation: yes
-# Packaged: 2020-02-13 09:06:03 UTC; stephane
-# Repository: CRAN
-# Date/Publication: 2020-02-13 11:50:07 UTC
