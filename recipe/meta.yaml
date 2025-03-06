@@ -28,6 +28,12 @@ requirements:
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base                 # [build_platform != target_platform]
+    - r-mass                       # [build_platform != target_platform]
+    - r-pixmap                     # [build_platform != target_platform]
+    - r-rcpp                       # [build_platform != target_platform]
+    - r-rcpparmadillo              # [build_platform != target_platform]
+    - r-sp                         # [build_platform != target_platform]
   host:
     - r-base
     - r-mass
