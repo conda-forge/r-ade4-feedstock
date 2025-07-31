@@ -259,6 +259,3 @@ Feedstock Maintainers
 * [@conda-forge/r](https://github.com/orgs/conda-forge/teams/r/)
 * [@nick-youngblut](https://github.com/nick-youngblut/)
 
-
-<!-- dummy commit to enable rerendering -->
-
