@@ -12,18 +12,23 @@ source:
   sha256: 3092c5a68f68f24fc28387407f43b939862a460635250609f2409e359476677f
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}          # [not win]
-    - {{ compiler('cxx') }}          # [not win]
+    - {{ compiler('cxx') }}        # [not win]
     - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
     - {{ stdlib("m2w64_c") }}      # [win]
+    - {{ compiler('fortran') }}    # [osx and arm64]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
     - {{ posix }}sed               # [win]
