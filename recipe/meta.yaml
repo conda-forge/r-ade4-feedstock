@@ -1,4 +1,4 @@
-{% set version = "1.7-23" %}
+{% set version = "1.7-24" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ade4_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ade4/ade4_{{ version }}.tar.gz
-  sha256: 3092c5a68f68f24fc28387407f43b939862a460635250609f2409e359476677f
+  sha256: 59509dcf781b2b69a97e225f53f2f76d0e0d5bfb04c5b6198007c035c4bd6d2a
 
 build:
-  number: 3
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -65,8 +65,8 @@ about:
   home: http://pbil.univ-lyon1.fr/ADE-4
   dev_url: https://github.com/sdray/ade4
   license: GPL-2.0-or-later
-  summary: Tools for multivariate data analysis. Several methods are provided for the analysis (i.e., ordination) of one-table (e.g., principal component analysis, correspondence analysis), two-table (e.g., coinertia analysis, redundancy analysis), three-table (e.g., RLQ analysis) and K-table (e.g., STATIS, multiple coinertia
-    analysis). The philosophy of the package is described in Dray and Dufour (2007) <doi:10.18637/jss.v022.i04>.
+  summary: Tools for multivariate data analysis. Several methods are provided for the analysis (i.e., ordination) of one-table (e.g., principal component analysis, correspondence analysis), two-table (e.g., coinertia analysis, redundancy analysis), three-table (e.g., RLQ analysis) and K-table (e.g., STATIS, multiple 
+    coinertia analysis). The philosophy of the package is described in Dray and Dufour (2007) <doi:10.18637/jss.v022.i04>.
   license_family: GPL2
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
